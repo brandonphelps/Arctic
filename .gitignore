@@ -1,0 +1,10 @@
+
+
+# Buildout
+bin/
+bootstrap.py
+var/
+
+
+# Emacs
+*~

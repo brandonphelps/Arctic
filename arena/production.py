@@ -1,0 +1,2 @@
+
+from arena.settings import *
