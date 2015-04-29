@@ -4,7 +4,11 @@
 bin/
 bootstrap.py
 var/
-
+.installed.cfg
 
 # Emacs
 *~
+
+# Project
+
+arena/settings/secret_settings.py
