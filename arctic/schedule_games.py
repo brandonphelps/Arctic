@@ -10,9 +10,6 @@ def schedule_game(client_list):
     return run_game.delay(clientOne, clientTwo)
 
 
-def random(client_list, ):
-    
-
 if __name__ == "__main__":
     clients = ['a', 'b', 'c', 'd']
     results = []
