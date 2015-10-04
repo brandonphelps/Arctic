@@ -6,6 +6,9 @@ bootstrap.py
 var/
 .installed.cfg
 
+# Python
+*.pyc
+
 # Emacs
 *~
 
