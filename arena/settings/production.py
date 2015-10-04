@@ -1,4 +1,4 @@
 
-from arena.settings import *
+from default import *
 
 

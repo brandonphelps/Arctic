@@ -3,6 +3,8 @@
 
 import os
 
+DEBUG = True
+
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -18,7 +20,7 @@ try:
 except ImportError:
     print "Couldn't find secret_settings file. Creating a new one."
     secret_settings_loc = os.path.join(SETTINGS_DIR, "secret_settings.py")
-    with open(secret_setting_loc, 'w') as secret_settings:
+    with open(secret_settings_loc, 'w') as secret_settings:
         secret_key = ''.join([chr(ord(x) % 90 + 33) for x in os.urandom(40)])
         secret_settings.write("SECRET_KEY='''%s'''\n" % secret_key)
     from secret_settings import *
@@ -27,11 +29,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'postgresql', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'arena_db',                      # Or path to database file if using sqlite3.
+        'USER': 'arena_user',                      # Not used with sqlite3.
+        'PASSWORD': 'ilikecherries',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -133,9 +135,10 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
+    'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
+    'django.contrib.admindocs',
+    'arena.thunderdome',
 )
 
 # A sample logging configuration. The only tangible logging
